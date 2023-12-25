@@ -13,9 +13,10 @@ import { CustomeResponseInterceptor } from './interceptors/custome-response.inte
   imports: [
     MongooseModule.forRootAsync({
       useFactory() {
-        const uri = `mongodb+srv://${process.env.NAME}:${process.env.PWD}@${process.env.URI}/${process.env.DB_NAME}`
+        const uri = `mongodb+srv://${process.env.NAME}:${process.env.PWD}@${process.env.URI}`
         return {
           uri,
+          dbName: process.env.DB_NAME,
         }
       },
     }),
