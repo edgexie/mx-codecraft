@@ -13,9 +13,9 @@ import { CustomeResponseInterceptor } from './interceptors/custome-response.inte
   imports: [
     MongooseModule.forRootAsync({
       useFactory() {
+        const uri = `mongodb+srv://${process.env.NAME}:${process.env.PWD}@${process.env.URI}${process.env.DB_NAME}`
         return {
-          uri: `mongodb+srv://${process.env.NAME}:${process.env.PWD}@${process.env.URI}`,
-          connectionName: process.env.CONNECTION_NAME,
+          uri,
         }
       },
     }),
@@ -23,8 +23,13 @@ import { CustomeResponseInterceptor } from './interceptors/custome-response.inte
     ConfigModule.forRoot({
       envFilePath:
         process.env.NODE_ENV === 'production'
-          ? '.env.production'
-          : '.env.development',
+          ? ['.env.production.local', '.env.production', '.env', '.env.local']
+          : [
+              '.env.development.local',
+              '.env.development',
+              '.env',
+              '.env.local',
+            ],
     }),
     AnalysisModule,
     AuthModule,
@@ -42,4 +47,6 @@ import { CustomeResponseInterceptor } from './interceptors/custome-response.inte
     },
   ],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {}
+}

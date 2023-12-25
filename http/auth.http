@@ -5,7 +5,7 @@ POST http://localhost:3000/auth
 GET http://localhost:3000/auth/validate-code?code=123456
 
 ### 获取验证码列表
-GET  http://localhost:3000/auth?pageSize=10&pageNumb=2
+GET  http://localhost:3000/auth?pageSize=10&pageNumb=1
 
 ### 获取最新验证码 废弃
 GET http://localhost:3000/auth/newest-invite-code
