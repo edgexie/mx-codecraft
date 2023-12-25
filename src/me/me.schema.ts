@@ -1,11 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import { HydratedDocument } from 'mongoose'
-
-export type MePageDocument = HydratedDocument<MePage>
 
 @Schema()
 export class MePage {
-  @Prop()
+  @Prop({ required: true })
   content: string
 
   @Prop()

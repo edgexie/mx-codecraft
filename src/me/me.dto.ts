@@ -1,6 +1,10 @@
-import { IsString, IsDate } from 'class-validator'
+import { IsString, IsDate, IsNotEmpty } from 'class-validator'
+import { PartialType } from '@nestjs/mapped-types'
 
 export class MePageDto {
+  @IsString()
+  id: string
+
   @IsString()
   content: string
 
@@ -9,4 +13,9 @@ export class MePageDto {
 
   @IsDate()
   updateTime: Date
+}
+
+export class UpdateMepageDto extends PartialType(MePageDto) {
+  @IsNotEmpty()
+  id: string
 }

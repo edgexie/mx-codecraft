@@ -4,6 +4,11 @@ import { AppService } from './app.service'
 import { MongooseModule } from '@nestjs/mongoose'
 import { MeModule } from './me/me.module'
 import { ConfigModule } from '@nestjs/config'
+import { AnalysisModule } from './analysis/analysis.module'
+import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core'
+import { HttpExceptionFilter } from './filters/http-exception.filter'
+import { AuthModule } from './auth/auth.module'
+import { CustomeResponseInterceptor } from './interceptors/custome-response.interceptor'
 @Module({
   imports: [
     MongooseModule.forRootAsync({
@@ -21,8 +26,20 @@ import { ConfigModule } from '@nestjs/config'
           ? '.env.production'
           : '.env.development',
     }),
+    AnalysisModule,
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: HttpExceptionFilter,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: CustomeResponseInterceptor,
+    },
+  ],
 })
 export class AppModule {}

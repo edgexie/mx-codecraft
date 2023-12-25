@@ -1,20 +1,16 @@
 # 关于我
 
-<a href="./README.pdf"  target="_blank"> 简历下载 :bookmark_tabs:</a>
+职业生涯始于，起初专注于工业自动化，并主要负责 PLC 编程。随着时间的推移，我逐渐将目光转向了前端开发，成为了一名全栈工程师。
 
-<!-- [简历下载 :bookmark_tabs:](./assets/images/avatar/avatar.jpg) -->
+在 2015 年下半年，我开始了前端实习生的职业生涯。我熟练掌握了 jQuery 和 AngularJS，并学习了 PHP，对 MVC 模式有了深入的理解，同时也开始接触了 ThinkPHP 框架。
 
-<!-- [相关证件下载](http://daily.edgexie.top/certificates.zip) -->
+随后的职业生涯中，我涉足了煤炭行业，以及大数据环保公司，其中，我主要使用 Vue、Angular 以及 React 等技术栈。在煤炭行业，我参与了煤炭监管系统、电力监控系统等项目的开发，专注于 GIS 和可视化图表的实现。在大数据环保公司，我带领团队开发了车联网生态系统以及太原环保大数据系统，同时也涉足了小程序开发，与移动端进行协同开发。
 
-<!-- [一寸照下载 :boy:](assets/images/avatar/avatar.jpg) -->
+在开发效率上，使用版本管理工具和持续集成 CI-CD 手段，并开发了一些团队共用组件库，借助工具约束了团队的代码规范和提交规范。
 
-## 我的简介
+自 2020 年起，我转入了军工行业，专注于技术型产品的开发。我带领团队，在用户使用交互方面提供专业建议，并确保作战指控系统具有良好的交互体验和合理的数据流转。
 
-<div >
-<img style="height: 150px; width: 150px; border-radius: 50%;float: left;margin-right: 10px" src="https://assets.edgexie.top/image/avatar/avatar-1.jpg"/>
-现居山西榆次，2011 从中北大学信息商务学院毕业，自动化专业。毕业后在工业自动化行业工作 4 年，主要从事 SCADA 系统构建，2016 年转型互联网企业做后端开发（php），2017 至今主要从事 web 前端开发工作。
-</div>
-<div style="clear: both;"></div>
+在我的职业生涯中，我不断拓展技术栈，积累了丰富的开发经验，善于团队合作，以专业的态度为项目的成功贡献力量。
 
 ## 工作经验
 
@@ -90,25 +86,33 @@
 
 ### 智慧环保
 
-- 项目使用 `react + typescript + mapbox + 公司自研组件`构建。
-  ![项目实拍](https://rk.edgexie.top/images/sentry.jpg)
+项目使用 `react + typescript + mapbox + 公司自研组件`构建。
+![项目实拍](https://bucket.edgexie.top/for-work/sentry.jpg)
 
 ### 生态环境物联网平台
 
-- 项目使用 `vue + axios + elementUI + 高德地图 + G2` 构建。
-- 在渲染海量点时，原`marker`标注方案在 150 个点时，页面拖动能明显感觉到卡。为提高地图渲染性能，引入了自定义`canvas layer`，在标注点数为 2000 时表现依然良好。
+项目使用 `vue + axios + elementUI + 高德地图 + G2` 构建。
+
+在渲染海量点时，原`marker`标注方案在 150 个点时，页面拖动能明显感觉到卡。为提高地图渲染性能，引入了自定义`canvas layer`，在标注点数为 2000 时表现依然良好。
+
+与后台配合开发权限系统，可添加采集设备，创建用户。应用在全国清徐、郑州新区、亳州、威海、通州等多个地市。
+
 - 项目大量使用`canvas`和`地图`相关知识，封装了一些常用的业务组件。
-  ![项目实拍](https://rk.edgexie.top/images/rk-che.jpg)
+  ![项目实拍](https://bucket.edgexie.top/for-work/rk-che.jpg)
+
+### 保单管理系统
+
+项目使用 ``
 
 ### 煤炭安全监管平台大屏
 
 - 项目使用`4X2` 1080P 拼接屏，实时展示煤矿`安全 人员 产量` 的状态与报警。
 - 使用`flex`布局，字体大小自适应，`GIS` 使用 百度地图，`echarts`可视化展示数据，`websocket`。
 
-![项目实拍](https://ygsj.edgexie.top/images/jumbotron-real.jpg)
+![项目实拍](https://bucket.edgexie.top/for-work/jumbotron-real.jpg)
 
 ### 某大型煤厂电力需求侧
 
 - 对厂内某车间用电量、用电效率、用电状态、用电分析的全方位实时可视化监控。前端项目使用`angular 4`进行构建。
 
-![img](https://ygsj.edgexie.top/image/power/power-2.png)
+![img](https://bucket.edgexie.top/for-work/power-2.png)

@@ -14,5 +14,18 @@ POST http://localhost:3000/me
 Content-Type: application/json
 
 {
-  "content": "abcdef"
+  "content": null
 }
+
+### 更新修改
+PUT  http://localhost:3000/me
+Content-Type: application/json
+
+{
+  "id": "65804f16c08424e9dc5d33ef",
+  "content": "aabcaa"
+}
+
+### 删除
+
+DELETE http://localhost:3000/me/65815366cbf4e728c38bad5f HTTP/1.1

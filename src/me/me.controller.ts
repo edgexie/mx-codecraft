@@ -1,5 +1,5 @@
-import { MePageDto } from './me.dto'
-import { Body, Controller, Get, Param, Post } from '@nestjs/common'
+import { MePageDto, UpdateMepageDto } from './me.dto'
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { MeService } from './me.service'
 
 @Controller('me')
@@ -24,5 +24,15 @@ export class MeController {
   @Post()
   createMePage(@Body() mePageDto: MePageDto) {
     return this.meService.create(mePageDto)
+  }
+
+  @Put()
+  update(@Body() updateMepageDto: UpdateMepageDto) {
+    return this.meService.update(updateMepageDto)
+  }
+
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return this.meService.delete(id)
   }
 }
