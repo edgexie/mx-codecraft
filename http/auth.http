@@ -1,3 +1,13 @@
+
+### 登录
+POST  http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "name": "edgex",
+  "pwd": "edgex"
+}
+
 ### 创建验证码
 POST http://localhost:3000/auth
 

@@ -9,6 +9,7 @@ import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core'
 import { HttpExceptionFilter } from './filters/http-exception.filter'
 import { AuthModule } from './auth/auth.module'
 import { CustomeResponseInterceptor } from './interceptors/custome-response.interceptor'
+import { UsersModule } from './users/users.module'
 @Module({
   imports: [
     MongooseModule.forRootAsync({
@@ -34,6 +35,7 @@ import { CustomeResponseInterceptor } from './interceptors/custome-response.inte
     }),
     AnalysisModule,
     AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [
@@ -49,5 +51,7 @@ import { CustomeResponseInterceptor } from './interceptors/custome-response.inte
   ],
 })
 export class AppModule {
-  constructor() {}
+  constructor() {
+    console.log(process.env.MONGODB_URI, process.env.DB_NAME)
+  }
 }

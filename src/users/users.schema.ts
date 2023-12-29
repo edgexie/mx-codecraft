@@ -1,9 +1,18 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 @Schema()
-export class MePage {
-  @Prop({ required: true })
-  content: string
+export class Users {
+  @Prop()
+  name: string
+
+  @Prop()
+  age: number
+
+  @Prop()
+  phoneNumber: number
+
+  @Prop()
+  pwd: string
 
   @Prop()
   createTime: Date
@@ -12,9 +21,9 @@ export class MePage {
   updateTime: Date
 }
 
-export const MePageSchema = SchemaFactory.createForClass(MePage)
+export const UsersSchema = SchemaFactory.createForClass(Users)
 
-MePageSchema.pre('save', function (next) {
+UsersSchema.pre('save', function (next) {
   // 如何给所有的schema设置，保存前的updatetime更新
   this.updateTime = new Date()
   next()

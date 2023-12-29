@@ -1,9 +1,20 @@
-import { Controller, Get, Query, Post } from '@nestjs/common'
+import { Controller, Get, Query, Post, Body } from '@nestjs/common'
 import { AuthService } from './auth.service'
+import { Users } from 'src/users/users.schema'
+import { UsersService } from 'src/users/users.service'
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private usersService: UsersService,
+  ) {}
+
+  // 登录
+  @Post('login')
+  login(@Body() userInfo: Users) {
+    return this.usersService.login(userInfo)
+  }
   // 创建验证码
   @Post()
   create() {
