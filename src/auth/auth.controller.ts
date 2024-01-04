@@ -1,7 +1,8 @@
-import { Controller, Get, Query, Post, Body } from '@nestjs/common'
+import { Controller, Get, Query, Post, Body, Req } from '@nestjs/common'
 import { AuthService } from './auth.service'
 import { Users } from 'src/users/users.schema'
 import { UsersService } from 'src/users/users.service'
+import { Request } from 'express'
 
 @Controller('auth')
 export class AuthController {
@@ -9,7 +10,11 @@ export class AuthController {
     private readonly authService: AuthService,
     private usersService: UsersService,
   ) {}
-
+  @Get('ip')
+  getIpAddress(@Req() request: Request): string {
+    const ip = request.ip // 获取访问的 IP 地址
+    return `Your IP address is ${ip}`
+  }
   // 登录
   @Post('login')
   login(@Body() userInfo: Users) {
