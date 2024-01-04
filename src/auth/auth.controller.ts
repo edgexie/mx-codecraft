@@ -12,8 +12,15 @@ export class AuthController {
   ) {}
   @Get('ip')
   getIpAddress(@Req() request: Request): string {
-    const ip = request.ip // 获取访问的 IP 地址
-    return `Your IP address is ${ip}`
+    const forwardedFor = request.headers['x-forwarded-for'] as string
+    const realIp = request.headers['x-real-ip']
+
+    // 优先使用 X-Forwarded-For 头部
+    const ip = forwardedFor
+      ? forwardedFor.split(',')[0].trim()
+      : realIp || request.ip
+
+    return `Your real IP address is ${ip}`
   }
   // 登录
   @Post('login')

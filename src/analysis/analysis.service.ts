@@ -44,7 +44,14 @@ export class AnalysisService {
 
   // 获取访问ip
   getIpAddress(): string {
-    const ip = this.request.ip // 获取访问的 IP 地址
+    const forwardedFor = this.request.headers['x-forwarded-for'] as string
+    const realIp = this.request.headers['x-real-ip'] as string
+
+    // 优先使用 X-Forwarded-For 头部
+    const ip = forwardedFor
+      ? forwardedFor.split(',')[0].trim()
+      : realIp || this.request.ip
+
     return ip
   }
 
