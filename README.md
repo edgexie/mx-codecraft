@@ -1,3 +1,3 @@
 ## service for my blog
 
-visit to my blog https://code-craft.edgexie.top/
+visit to my blog https://blog.edgexie.top/
