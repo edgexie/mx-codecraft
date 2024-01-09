@@ -10,6 +10,7 @@ import { HttpExceptionFilter } from './filters/http-exception.filter'
 import { AuthModule } from './auth/auth.module'
 import { CustomeResponseInterceptor } from './interceptors/custome-response.interceptor'
 import { UsersModule } from './users/users.module'
+import { Esp8266Module } from './esp8266/esp8266.module';
 @Module({
   imports: [
     MongooseModule.forRootAsync({
@@ -36,6 +37,7 @@ import { UsersModule } from './users/users.module'
     AnalysisModule,
     AuthModule,
     UsersModule,
+    Esp8266Module,
   ],
   controllers: [AppController],
   providers: [

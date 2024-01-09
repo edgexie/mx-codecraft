@@ -19,3 +19,4 @@ GET  http://localhost:3000/auth?pageSize=10&pageNumb=1
 
 ### 获取最新验证码 废弃
 GET http://localhost:3000/auth/newest-invite-code
+
