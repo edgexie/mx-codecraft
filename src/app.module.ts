@@ -11,6 +11,7 @@ import { AuthModule } from './auth/auth.module'
 import { CustomeResponseInterceptor } from './interceptors/custome-response.interceptor'
 import { UsersModule } from './users/users.module'
 import { Esp8266Module } from './esp8266/esp8266.module';
+import { SseModule } from './sse/sse.module';
 @Module({
   imports: [
     MongooseModule.forRootAsync({
@@ -38,6 +39,7 @@ import { Esp8266Module } from './esp8266/esp8266.module';
     AuthModule,
     UsersModule,
     Esp8266Module,
+    SseModule,
   ],
   controllers: [AppController],
   providers: [
