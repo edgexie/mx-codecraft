@@ -10,6 +10,7 @@ export class SseController {
       'Cache-Control': 'no-cache',
       'Content-Type': 'text/event-stream',
       Connection: 'keep-alive',
+      'Content-Encoding': 'none',
     })
 
     setInterval(() => {
