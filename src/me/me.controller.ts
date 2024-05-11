@@ -11,6 +11,11 @@ export class MeController {
     return this.meService.getMePages()
   }
 
+  @Get('page')
+  getMePage() {
+    return this.meService.getMePage()
+  }
+
   @Get('by-file')
   getMePageByFile() {
     return this.meService.getMePageByFile()

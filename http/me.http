@@ -1,6 +1,9 @@
 ### 获取所有列表
 GET http://localhost:3000/me
 
+### 获取一条数据
+GET http://localhost:3000/me/page
+
 ### 获取文件
 GET http://localhost:3000/me/by-file HTTP/1.1
 Content-Type: application/json

@@ -34,9 +34,8 @@ export class AuthService {
       if (res.canUse) {
         const newTime = new Date().getTime()
         if (newTime - res.createTime.getTime() < expires) {
-          const data = await this.meService.getMePageById(
-            '663ec526dbce36179a59e7d2',
-          )
+          const data = await this.meService.getMePage()
+
           return {
             content: data.content,
             flag: true,

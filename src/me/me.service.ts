@@ -34,8 +34,14 @@ export class MeService {
     }
   }
 
+  // 获取列表
   async getMePages() {
     return this.mePageModel.find()
+  }
+
+  // 获取一条数据
+  async getMePage() {
+    return this.mePageModel.findOne()
   }
 
   // 添加
