@@ -1,7 +1,6 @@
-import { MePageDto, UpdateMepageDto } from './me.dto'
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { MePage } from './me.schema'
+import { MePage, UpdateMepage } from './me.schema'
 import { Model } from 'mongoose'
 import * as fs from 'fs'
 import { resolve } from 'path'
@@ -40,17 +39,17 @@ export class MeService {
   }
 
   // 添加
-  create(mePageDto: MePageDto) {
-    mePageDto.createTime = new Date()
-    const createMePage = new this.mePageModel(mePageDto)
+  create(mePage: MePage) {
+    mePage.createTime = new Date()
+    const createMePage = new this.mePageModel(mePage)
     return createMePage.save()
   }
 
   // 修改
-  async update(updateMepageDto: UpdateMepageDto) {
+  async update(updateMepage: UpdateMepage) {
     return this.mePageModel.findOneAndUpdate(
-      { _id: updateMepageDto.id },
-      updateMepageDto,
+      { _id: updateMepage.id },
+      updateMepage,
       {
         new: true,
       },

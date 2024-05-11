@@ -4,6 +4,7 @@ import { AuthController } from './auth.controller'
 import { InviteCode, InviteCodeSchema } from './invite-code.schema'
 import { MongooseModule } from '@nestjs/mongoose'
 import { UsersModule } from 'src/users/users.module'
+import { MeModule } from 'src/me/me.module'
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { UsersModule } from 'src/users/users.module'
       { name: InviteCode.name, schema: InviteCodeSchema },
     ]),
     UsersModule,
+    MeModule,
   ],
   controllers: [AuthController],
   providers: [AuthService],

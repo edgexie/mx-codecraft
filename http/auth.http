@@ -12,7 +12,7 @@ Content-Type: application/json
 POST http://localhost:3000/auth
 
 ### 验证
-GET http://localhost:3000/auth/validate-code?code=123456
+GET http://localhost:3000/auth/validate-code?code=583690
 
 ### 获取验证码列表
 GET  http://localhost:3000/auth?pageSize=10&pageNumb=1

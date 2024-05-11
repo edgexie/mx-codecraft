@@ -22,11 +22,13 @@ export class AuthController {
 
     return `Your real IP address is ${ip}`
   }
+
   // 登录
   @Post('login')
   login(@Body() userInfo: Users) {
     return this.usersService.login(userInfo)
   }
+
   // 创建验证码
   @Post()
   create() {

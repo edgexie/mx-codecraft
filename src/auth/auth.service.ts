@@ -3,10 +3,12 @@ import { InviteCode } from './invite-code.schema'
 import { Model } from 'mongoose'
 import { InjectModel } from '@nestjs/mongoose'
 import { generateRandomNumber } from '../utils'
+import { MeService } from 'src/me/me.service'
 
 @Injectable()
 export class AuthService {
   constructor(
+    private readonly meService: MeService,
     @InjectModel(InviteCode.name)
     private inviteCodeModel: Model<InviteCode>,
   ) {
@@ -32,7 +34,13 @@ export class AuthService {
       if (res.canUse) {
         const newTime = new Date().getTime()
         if (newTime - res.createTime.getTime() < expires) {
-          return true
+          const content = await this.meService.getMePageById(
+            '663ec526dbce36179a59e7d2',
+          )
+          return {
+            content: content,
+            flag: true,
+          }
         } else {
           await this.inviteCodeModel.findByIdAndUpdate(res.id, {
             canUse: false,

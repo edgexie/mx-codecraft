@@ -10,5 +10,6 @@ import { MePage, MePageSchema } from './me.schema'
   ],
   controllers: [MeController],
   providers: [MeService],
+  exports: [MeService],
 })
 export class MeModule {}

@@ -14,7 +14,7 @@ POST http://localhost:3000/me
 Content-Type: application/json
 
 {
-  "content": null
+  "content": "123123"
 }
 
 ### 更新修改
@@ -22,7 +22,7 @@ PUT  http://localhost:3000/me
 Content-Type: application/json
 
 {
-  "id": "65804f16c08424e9dc5d33ef",
+  "id": "663ec526dbce36179a59e7d2",
   "content": "aabcaa"
 }
 

@@ -1,4 +1,4 @@
-import { MePageDto, UpdateMepageDto } from './me.dto'
+import { MePage, UpdateMepage } from './me.schema'
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { MeService } from './me.service'
 
@@ -21,14 +21,15 @@ export class MeController {
     return this.meService.getMePageById(id)
   }
 
+  // 创建一条内容
   @Post()
-  createMePage(@Body() mePageDto: MePageDto) {
-    return this.meService.create(mePageDto)
+  createMePage(@Body() mePage: MePage) {
+    return this.meService.create(mePage)
   }
 
   @Put()
-  update(@Body() updateMepageDto: UpdateMepageDto) {
-    return this.meService.update(updateMepageDto)
+  update(@Body() updateMepage: UpdateMepage) {
+    return this.meService.update(updateMepage)
   }
 
   @Delete(':id')
