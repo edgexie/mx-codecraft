@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### 创建验证码
-POST http://localhost:3000/auth
+POST https://mx-codecraft.edgexie.top/auth
 
 ### 验证
 GET http://localhost:3000/auth/validate-code?code=583690

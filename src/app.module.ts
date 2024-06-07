@@ -12,6 +12,7 @@ import { CustomeResponseInterceptor } from './interceptors/custome-response.inte
 import { UsersModule } from './users/users.module'
 import { Esp8266Module } from './esp8266/esp8266.module'
 import { SseModule } from './sse/sse.module'
+// import * as mongoose from 'mongoose'
 @Module({
   imports: [
     MongooseModule.forRootAsync({
@@ -56,6 +57,7 @@ import { SseModule } from './sse/sse.module'
 })
 export class AppModule {
   constructor() {
+    // mongoose.Schema.set('timestamps', true);
     console.log(process.env.MONGODB_URI, process.env.DB_NAME)
   }
 }
